@@ -39,6 +39,14 @@ const App = () => {
     <button onClick={goLogin}>Login</button>
     <button onClick={goToListings}>Listings</button>
     <button onClick={goToCreate}>Create a Listing</button>
+    {homeCheck ? (
+      <>
+      <div class='container'>
+        <h1>Re-Play</h1>
+        <p>We know how much you like the nostolgia of old times, that's why, we're happy to present <b>Re-Play</b> a new store front that allows for listings of all things vintage at a good price. It's up to us as a community to stop scalpers, and those taking the joy out of the hobby. Let's help eachother out so we can all <i>Re-Play</i> our old favorites.</p>
+        </div>
+        </> : null
+    )}
     </>
   )
 }
