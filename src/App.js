@@ -35,10 +35,10 @@ const App = () => {
   return(
     <>
     <h1>Re-Play</h1>
-    <button>Home</button>
-    <button>Login</button>
-    <button>Listings</button>
-    <button>Create a Listing</button>
+    <button onClick={goToHome}>Home</button>
+    <button onClick={goLogin}>Login</button>
+    <button onClick={goToListings}>Listings</button>
+    <button onClick={goToCreate}>Create a Listing</button>
     </>
   )
 }
