@@ -7,6 +7,15 @@ const App = () => {
   const [loginCheck, setLoginCheck]=useState(false)
   const [listingCheck, setListingCheck]=useState(false)
   const [createCheck, setCreateCheck]=useState(false)
+  const [newName, setNewName] = useState('')
+  const [newDesc, setNewDesc] = useState('')
+  const [newPrice, setNewPrice] = useState('')
+  const [newRarity, setNewRarity] = useState('')
+  const [newCondition, setNewCondition] = useState('')
+
+  useEffect(()=>{
+    goToHome()
+  }, [])
 
   const goToHome = () => {
     setLoginCheck(false)
