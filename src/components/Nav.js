@@ -6,7 +6,7 @@ function nav() {
         <>
         <nav className="navbar navbar-expand-lg navbar-light">
     <div className="container-fluid">
-      <a className="navbar-brand" href="#"><h4>Replay!</h4></a>
+      <a className="navbar-brand" href="#"><h4>Replay! - Buy and Sell</h4></a>
       <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
       </button>
@@ -20,7 +20,7 @@ function nav() {
       </div>
     </div>
   </nav>
-  
+
       </>
     )
 }

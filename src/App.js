@@ -50,10 +50,11 @@ const App = () => {
   }
   return(
     <>
-        {homeCheck ? (<>
+        {homeCheck ? (<div>
           <Nav />
           <Home />
-      </>  ):<>
+          </div>
+        ):<>
         <div className='container'>
         <h1>Replay!</h1>
         <h7>"Where video games always have extra lives"</h7>

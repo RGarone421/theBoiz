@@ -14,7 +14,7 @@ function home() {
     <a href="#" className="btn btn-danger d-flex justify-content-between">Delete</a>
   </div>
 </div>
-    )
+  )
 }
 
 export default home
