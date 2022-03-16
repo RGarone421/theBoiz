@@ -12,3 +12,8 @@
   text-align: center;
   padding-top: 10%;
 }
+
+.container {
+  display: block;
+  text-align: center;
+}

@@ -1,5 +1,6 @@
 import {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Nav from './components/Nav'
 import Home from './components/Home'
 import logo from './rg.jpg'
 
@@ -49,14 +50,15 @@ const App = () => {
   return(
     <>
         {homeCheck ? (<>
-          <Home />
-          <p>Welcome Home!</p>
+          <Nav />
       </>  ):<>
         <div className='container'>
-        <h1>Re-Play</h1>
+        <h1>Replay!</h1>
+        <h7>"Where video games always have extra lives"</h7>
         <img src={logo} alt='' />
         <div className="create">
             <ul>
+              <h7>Press Start to enter..</h7>
             <li><button id="start" type="button" className="btn btn-success" onClick={goToHome}>Start</button></li>
             </ul>
             </div>
