@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/Nav'
 import Home from './components/Home'
 import logo from './rg.jpg'
+import list from './disney.jpg'
 
 
 
@@ -51,6 +52,7 @@ const App = () => {
     <>
         {homeCheck ? (<>
           <Nav />
+          <Home />
       </>  ):<>
         <div className='container'>
         <h1>Replay!</h1>

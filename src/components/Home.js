@@ -1,14 +1,17 @@
 import React from "react";
-
+import list from '../disney.jpg'
 
 function home() {
     return (
-        <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src="..." alt="Card image cap" />
-  <div class="card-body">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
+        <div className="card">
+  <img className="card-img-top" src={list} alt="Card image cap" />
+  <div className="card-body">
+    <h3 className="card-title text-warning">Disney Sports Basketball</h3>
+    <p className="card-text text-info">Rare Score(1-10): 11</p>
+    <p className="card-text text-info">Asking Price: $550.00</p>
+    <p className="card-text text-info">Condition: Great</p>
+    <a href="#" className="btn btn-success d-flex justify-content-between">Buy it Now</a>
+    <a href="#" className="btn btn-danger d-flex justify-content-between">Delete</a>
   </div>
 </div>
     )

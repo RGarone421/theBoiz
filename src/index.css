@@ -17,3 +17,16 @@
   display: block;
   text-align: center;
 }
+
+.one {
+  color: red;
+}
+
+.two {
+  color: blue;
+}
+
+.card {
+  display: block;
+  max-width: 400px;
+}
