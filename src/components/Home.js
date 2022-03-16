@@ -20,11 +20,7 @@ function home() {
       </div>
     </div>
   </nav>
-  <div className="create">
-      <ul>
-      <li><button id="start" type="button" className="btn btn-success">Start</button></li>
-      </ul>
-      </div>
+  
       </>
     )
 }

@@ -1,12 +1,13 @@
 import {useEffect, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home'
+import logo from './rg.jpg'
 
 
 
 const App = () => {
   const [item, setItem]=useState('')
-  const [homeCheck, setHomeCheck]=useState(true)
+  const [homeCheck, setHomeCheck]=useState(false)
   const [loginCheck, setLoginCheck]=useState(false)
   const [listingCheck, setListingCheck]=useState(false)
   const [createCheck, setCreateCheck]=useState(false)
@@ -15,9 +16,10 @@ const App = () => {
   const [newPrice, setNewPrice] = useState('')
   const [newRarity, setNewRarity] = useState('')
   const [newCondition, setNewCondition] = useState('')
+  const [startCheck, setStartCheck] = useState(false)
 
   useEffect(()=>{
-    goToHome()
+
   }, [])
 
   const goToHome = () => {
@@ -45,7 +47,22 @@ const App = () => {
     setListingCheck(false)
   }
   return(
-    <Home />
+    <>
+        {homeCheck ? (<>
+          <Home />
+          <p>Welcome Home!</p>
+      </>  ):<>
+        <div className='container'>
+        <h1>Re-Play</h1>
+        <img src={logo} alt='' />
+        <div className="create">
+            <ul>
+            <li><button id="start" type="button" className="btn btn-success" onClick={goToHome}>Start</button></li>
+            </ul>
+            </div>
+          </div>
+          </>}
+    </>
   )
 }
 
