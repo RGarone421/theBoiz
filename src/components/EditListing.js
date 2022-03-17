@@ -11,7 +11,7 @@ const EditListing = () => {
 
   const handleNewListingEdit = (listingData) => {
 
-    axios.put(`http://localhost:3000/${listingData.id}`,
+    axios.put(`http://re-play-back.herokuapp.com/api/listings/${listingData.id}`,
     {
       name: newName,
       image: newImage,
@@ -22,7 +22,7 @@ const EditListing = () => {
 
     }).then((response)=>{
       axios
-        .get('localhost:3000').then((response)=>{
+        .get('http://re-play-back.herokuapp.com/api/listings').then((response)=>{
           setListings(response.data)
           setNewName('')
           setNewImage('')
@@ -32,15 +32,15 @@ const EditListing = () => {
           setNewDesc('')
         })
     })
-    
+
   }
 
   const handleDelete = (listingData) => {
     axios
-      .delete(`localhost:3000/${listingData._id}`)
+      .delete(`http://re-play-back.herokuapp.com/api/listings/${listingData._id}`)
       .then(()=> {
         axios
-          .get('localhost:3000/listings').then((response)=> {
+          .get('http://re-play-back.herokuapp.com/api/listings').then((response)=> {
             setListings(response.data)
           })
       })

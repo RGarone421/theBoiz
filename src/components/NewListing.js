@@ -8,21 +8,21 @@ const NewListing = () => {
   const [newImage, setNewImage] = useState('')
   const [newCondition, setNewCondition] = useState('')
   const [listings, setListings]=useState([])
-
   const handleNewListingSubmit = (event) => {
-    event.preventDefault(
-    axios.post('localhost:3000',
+    event.preventDefault()
+    axios.post('http://re-play-back.herokuapp.com/api/listings',
     {
-      name: newName,
+      name:newName,
       image: newImage,
+      descirption: newDesc,
       price: newPrice,
       rarity: newRarity,
       condition: newCondition,
-      descirption: newDesc,
+
 
     }).then((response)=>{
       axios
-        .get('localhost:3000').then((response)=>{
+        .get('https://re-play-back.herokuapp.com/api/listings').then((response)=>{
           setListings(response.data)
           setNewName('')
           setNewImage('')
@@ -32,15 +32,15 @@ const NewListing = () => {
           setNewDesc('')
         })
     })
-    )
+
   }
 
   const handleDelete = (listingData) => {
     axios
-      .delete(`localhost:3000/${listingData._id}`)
+      .delete(`https://re-play-back.herokuapp.com/api/listings/${listingData.id}`)
       .then(()=> {
         axios
-          .get('localhost:3000/listings').then((response)=> {
+          .get('https://re-play-back.herokuapp.com/api/listings').then((response)=> {
             setListings(response.data)
           })
       })
@@ -65,13 +65,14 @@ const NewListing = () => {
   }
   return(
     <div>
+    {newName}-{newDesc}-{newPrice}-{newRarity}-{newCondition}
     <form className='form' onSubmit={handleNewListingSubmit}>
-    Username: <input type='text'/><br />
-    Name: <input type='text' onChange={handleNewNameChange} /><br />
-    Image: <input type='text' onChange={handleNewImageChange} /><br />
-    Description: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Rarity: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Condition: <input type='text' onChange={handleNewConditionChange} /><br />
+    Name: <input type='text' name='name' onChange={handleNewNameChange} /><br />
+    Image: <input type='text' name='image'onChange={handleNewImageChange} /><br />
+    Description: <input type='text' name='description' onChange={handleNewDescriptionChange} /><br />
+    Price: <input type='number' name='price' onChange={handleNewPriceChange} /><br />
+    Rarity: <input type='text' name='rarity' onChange={handleNewDescriptionChange} /><br />
+    Condition: <input type='text' name='condition' onChange={handleNewConditionChange} /><br />
     <input type='submit' value='submit'/>
     </form>
     </div>
