@@ -3,7 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/Nav'
 import Home from './components/Home'
 import logo from './rg.jpg'
-
+import NewListing from './components/NewListing'
 
 
 const App = () => {
@@ -12,11 +12,6 @@ const App = () => {
   const [loginCheck, setLoginCheck]=useState(false)
   const [listingCheck, setListingCheck]=useState(false)
   const [createCheck, setCreateCheck]=useState(false)
-  const [newName, setNewName] = useState('')
-  const [newDesc, setNewDesc] = useState('')
-  const [newPrice, setNewPrice] = useState('')
-  const [newRarity, setNewRarity] = useState('')
-  const [newCondition, setNewCondition] = useState('')
   const [startCheck, setStartCheck] = useState(false)
 
   useEffect(()=>{
@@ -52,6 +47,7 @@ const App = () => {
         {homeCheck ? (<div>
           <Nav />
           <Home />
+          
           </div>
         ):<>
         <div className='container'>

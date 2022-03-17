@@ -1,7 +1,11 @@
 // import React from "react";
+import {useState, useEffect} from 'react'
+import NewListing from './NewListing'
+
 
 
 const Home = () => {
+  const [listings, setNewListings]=useState([])
     return (<>
         <div className="card" >
   <img className="card-img-top" src="..." alt="Card image cap" />
@@ -11,6 +15,7 @@ const Home = () => {
     <a href="#" className="btn btn-primary">Go somewhere</a>
   </div>
 </div>
+<NewListing />
   </>  )
 }
 
