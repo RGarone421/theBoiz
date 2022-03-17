@@ -3,12 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Nav from './components/Nav'
 import Home from './components/Home'
 import logo from './rg.jpg'
-<<<<<<< HEAD
 import NewListing from './components/NewListing'
-=======
-import list from './disney.jpg'
-
->>>>>>> 4b49fc40aa7444b7a843c7c273e6d48479059182
 
 
 const App = () => {
@@ -52,7 +47,7 @@ const App = () => {
         {homeCheck ? (<div>
           <Nav />
           <Home />
-          
+
           </div>
         ):<>
         <div className='container'>
