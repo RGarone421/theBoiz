@@ -3,7 +3,7 @@
 import {useState, useEffect} from 'react'
 import NewListing from './NewListing'
 import list from '../disney.jpg'
-
+import EditListing from './EditListing'
 
 const Home = () => {
   const [listings, setNewListings]=useState([])

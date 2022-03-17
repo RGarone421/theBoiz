@@ -1,7 +1,12 @@
-import React from "react";
+import React,{useState} from 'react'
+import NewListing from './NewListing'
 
+const Nav = () => {
+  const [addCheck, setAddCheck]= useState(false)
 
-function nav() {
+  const changeAddCheck = () => {
+    setAddCheck(!{addCheck})
+  }
     return (
         <>
         <nav className="navbar navbar-expand-lg navbar-light">
@@ -13,6 +18,8 @@ function nav() {
       <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
         </ul>
+        <button onClick={addCheck}>Add a New Listing</button>
+        {addCheck ? (<NewListing />):null}
         <form className="d-flex">
           <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search" />
           <button className="btn btn-outline-success" type="submit">Search</button>
@@ -20,9 +27,9 @@ function nav() {
       </div>
     </div>
   </nav>
-
+        
       </>
     )
 }
 
-export default nav
+export default Nav
