@@ -8,19 +8,23 @@ const NewListing = () => {
   const [newImage, setNewImage] = useState('')
   const [newCondition, setNewCondition] = useState('')
   const [listings, setListings]=useState([])
+
+
   const handleNewListingSubmit = (event) => {
     event.preventDefault()
-    axios.post('http://re-play-back.herokuapp.com/api/listings',
-    {
-      name:newName,
-      image: newImage,
-      descirption: newDesc,
-      price: newPrice,
-      rarity: newRarity,
-      condition: newCondition,
+    const postData =   {
+        name:newName,
+        image: newImage,
+        descirption: newDesc,
+        price: newPrice,
+        rarity: newRarity,
+        condition: newCondition,
 
 
-    }).then((response)=>{
+      }
+      console.log(postData);
+    axios.post('https://re-play-back.herokuapp.com/api/listings', postData
+  ).then((response)=>{
       axios
         .get('https://re-play-back.herokuapp.com/api/listings').then((response)=>{
           setListings(response.data)
@@ -71,7 +75,7 @@ const NewListing = () => {
     Image: <input type='text' name='image'onChange={handleNewImageChange} /><br />
     Description: <input type='text' name='description' onChange={handleNewDescriptionChange} /><br />
     Price: <input type='number' name='price' onChange={handleNewPriceChange} /><br />
-    Rarity: <input type='text' name='rarity' onChange={handleNewDescriptionChange} /><br />
+    Rarity: <input type='text' name='rarity' onChange={handleNewRarityChange} /><br />
     Condition: <input type='text' name='condition' onChange={handleNewConditionChange} /><br />
     <input type='submit' value='submit'/>
     </form>
