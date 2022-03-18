@@ -6,7 +6,7 @@ import logo from './rg.jpg'
 import NewListing from './components/NewListing'
 import LoginButton from './components/LoginButton'
 import LogoutButton from './components/LogoutButton'
-
+import Profile from './components/Profile'
 const App = () => {
   const [item, setItem]=useState('')
   const [homeCheck, setHomeCheck]=useState(false)
@@ -15,7 +15,13 @@ const App = () => {
   const [createCheck, setCreateCheck]=useState(false)
   const [startCheck, setStartCheck] = useState(false)
   const [addCheck, setAddCheck]= useState(false)
+  const [profileCheck, setProfileCheck] = useState(false)
 
+  const openProfile = () => {
+    setHomeCheck(false)
+    setListingCheck(false)
+    setProfileCheck(true)
+  }
   const changeAddCheck = () => {
     setAddCheck(true)
   }
@@ -32,6 +38,7 @@ const App = () => {
     setListingCheck(false)
     setCreateCheck(false)
     setHomeCheck(true)
+    setProfileCheck(false)
   }
   const goLogin = () => {
     setLoginCheck(true)
@@ -44,6 +51,7 @@ const App = () => {
     setLoginCheck(false)
     setCreateCheck(false)
     setHomeCheck(false)
+    setProfileCheck(false)
   }
   const goToCreate = () => {
     setCreateCheck(true)
@@ -54,9 +62,11 @@ const App = () => {
   return(
     <>
     <main className='column'>
-      <h4>Login</h4>
       <LoginButton />
       <LogoutButton />
+      <button onClick ={goToHome}>Listings</button>
+      <button onClick={openProfile}>My Profile</button>
+      {profileCheck ? (<Profile />):null}
       <button onClick={changeAddCheck}>Add a New Listing</button>
       {addCheck ? (
         <div>
