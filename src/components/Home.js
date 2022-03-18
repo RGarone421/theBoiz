@@ -94,9 +94,9 @@ const Home = () => {
         <p className="card-text text-info">{listing.description}</p>
         <p className="card-text text-info">Asking Price: {listing.price}</p>
         <p className="card-text text-info">Condition: {listing.condition}</p>
-        <button className="btn btn-success d-flex justify-content-between">Buy it Now</button>
-        <button className="btn btn-danger d-flex justify-content-between" onClick={ (event)=>{ handleDelete(listing.id)}}>Delete</button>
-        <button className="btn btn-success d-flex justify-content-between" onClick={editViewOn}>Edit</button>
+        <button className="btn btn-success justify-content-between btn-sm btn-block">Buy it Now</button><br />
+        <button className="btn btn-danger justify-content-between btn-sm btn-block" onClick={ (event)=>{ handleDelete(listing.id)}}>Delete</button><br />
+        <button className="btn btn-warning justify-content-between btn-sm btn-block" onClick={editViewOn}>Edit Listing</button><br />
         {showEdit ? (<>
           <div>
           <form className='form' onSubmit={handleNewListingEdit(listing.id)}>
