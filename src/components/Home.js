@@ -84,7 +84,7 @@ const Home = () => {
     },[])
   })
     return (
-      <div className='container'>
+      <div className='flex-container'>
 
     {listings.map((listing)=>{
       return <div className='card' key={listing.id}>

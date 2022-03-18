@@ -54,14 +54,13 @@ const App = () => {
   return(
     <>
     <main className='column'>
-      <h4>Login</h4>
       <LoginButton />
       <LogoutButton />
-      <button onClick={changeAddCheck}>Add a New Listing</button>
+      <button className='btn btn-info btn-sm col-xs-2 margin-left' onClick={changeAddCheck}>Create New Listing</button>
       {addCheck ? (
         <div>
         <NewListing />
-        <button onClick={closeNewForm}>Close Form</button>
+        <button className='btn btn-danger btn-sm' onClick={closeNewForm}>Close Form</button>
       </div>):null}
     </main>
         {homeCheck ? (<div>
@@ -73,10 +72,9 @@ const App = () => {
         <div className='container'>
         <h1>Replay!</h1>
         <h7>"Where video games always have extra lives"</h7>
-        <img src={logo} alt='' />
         <div className="create">
             <ul>
-              <h7>Press Start to enter..</h7>
+              <h5>Press Start to enter..</h5>
             <li><button id="start" type="button" className="btn btn-success" onClick={goToHome}>Start</button></li>
             </ul>
             </div>

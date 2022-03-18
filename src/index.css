@@ -13,9 +13,12 @@
   padding-top: 10%;
 }
 
-.container {
-  display: block;
+.flex-container {
+  display: flex;
+  flex-wrap: wrap;
   text-align: center;
+  margin-left: 10%;
+  margin-top: 10%;
 }
 
 .one {
@@ -31,12 +34,49 @@
   max-width: 400px;
 }
 
+.navbar-brand {
+  display: block;
+  text-align: center;
+
+}
+
+.title2 {
+  display: block;
+  text-align: center;
+  color: tomato
+}
+
+.motto2 {
+  display: block;
+  text-align: center;
+  color: greenyellow;
+}
+
+.logo {
+  display: block;
+  text-align: center;
+}
+
+h1 {
+  text-align: center;
+  color: tomato;
+}
+
 h7 {
   display: block;
   text-align: center;
+  color: greenyellow;
 }
 
 button {
   margin-right: 5px;
   margin-bottom: 5px !important;
+  margin-left: 5px !important;
 }
+
+h4 {
+  display: block;
+  padding-left: 5px;
+}
+
+

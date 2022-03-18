@@ -69,14 +69,14 @@ const NewListing = () => {
     <div>
     {newName}-{newDesc}-{newPrice}-{newRarity}-{newCondition}
     <form className='form' onSubmit={handleNewListingSubmit}>
-    Name: <input type='text' onChange={handleNewNameChange} /><br />
-    Image: <input type='text' onChange={handleNewImageChange} /><br />
-    Description: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Price: <input type='text' name='price' onChange={handleNewPriceChange} /><br />
-    Rarity (1-10): <input type='text' onChange={handleNewRarityChange} /><br />
+    Name: <input placeholder='Mr. Game and Watch' type='text' onChange={handleNewNameChange} /><br />
+    Image: <input placeholder='Must be img url' type='text' onChange={handleNewImageChange} /><br />
+    Description: <input placeholder='Any Flaws?' type='text' onChange={handleNewDescriptionChange} /><br />
+    Price: <input placeholder='$ USD' type='number' name='price' onChange={handleNewPriceChange} /><br />
+    Rarity (1-10): <input placeholder='10 = Unicorn' type='number' onChange={handleNewRarityChange} /><br />
     Condition:
-    <input type='text' name='condition' onChange={handleNewConditionChange}/><br />
-    <input type='submit' value='submit'/><br />
+    <input placeholder='Lets be honest here' type='text' name='condition' onChange={handleNewConditionChange}/><br />
+    <input className=' submit btn btn-success btn-sm' type='submit' value='submit'/><br />
 
     </form>
     </div>
