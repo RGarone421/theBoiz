@@ -35,3 +35,8 @@ h7 {
   display: block;
   text-align: center;
 }
+
+button {
+  margin-right: 5px;
+  margin-bottom: 5px !important;
+}
