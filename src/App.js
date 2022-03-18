@@ -14,6 +14,14 @@ const App = () => {
   const [listingCheck, setListingCheck]=useState(false)
   const [createCheck, setCreateCheck]=useState(false)
   const [startCheck, setStartCheck] = useState(false)
+  const [addCheck, setAddCheck]= useState(false)
+
+  const changeAddCheck = () => {
+    setAddCheck(true)
+  }
+  const closeNewForm = () => {
+    setAddCheck(false)
+  }
 
   useEffect(()=>{
 
@@ -49,6 +57,12 @@ const App = () => {
       <h4>Login</h4>
       <LoginButton />
       <LogoutButton />
+      <button onClick={changeAddCheck}>Add a New Listing</button>
+      {addCheck ? (
+        <div>
+        <NewListing />
+        <button onClick={closeNewForm}>Close Form</button>
+      </div>):null}
     </main>
         {homeCheck ? (<div>
           <Nav />
