@@ -4,7 +4,8 @@ import Nav from './components/Nav'
 import Home from './components/Home'
 import logo from './rg.jpg'
 import NewListing from './components/NewListing'
-
+import LoginButton from './components/LoginButton'
+import LogoutButton from './components/LogoutButton'
 
 const App = () => {
   const [item, setItem]=useState('')
@@ -44,6 +45,11 @@ const App = () => {
   }
   return(
     <>
+    <main className='column'>
+      <h1>Auth0 Login</h1>
+      <LoginButton />
+      <LogoutButton />
+    </main>
         {homeCheck ? (<div>
           <Nav />
           <Home />
