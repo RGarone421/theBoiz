@@ -88,7 +88,7 @@ const Home = () => {
 
     {listings.map((listing)=>{
       return <div className='card' key={listing.id}>
-      <img className="card-img-top" url={listing.image} alt="Card image cap" />
+      <img className="card-img-top" src={listing.image} alt="Card image cap" />
       <div className="card-body">
         <h3 className="card-title text-warning">{listing.name}</h3>
         <p className="card-text text-info">{listing.description}</p>
