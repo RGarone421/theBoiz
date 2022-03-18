@@ -19,8 +19,6 @@ const NewListing = () => {
         price: newPrice,
         rarity: newRarity,
         condition: newCondition,
-
-
       }
       console.log(postData);
     axios.post('https://re-play-back.herokuapp.com/api/listings', postData

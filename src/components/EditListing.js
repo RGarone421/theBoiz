@@ -10,19 +10,22 @@ const EditListing = () => {
   const [listings, setListings]=useState([])
 
   const handleNewListingEdit = (listingData) => {
+    listingData.preventDefault()
+    const postData =   {
+        name:newName,
+        image: newImage,
+        descirption: newDesc,
+        price: newPrice,
+        rarity: newRarity,
+        condition: newCondition,
 
-    axios.put(`http://re-play-back.herokuapp.com/api/listings/${listingData.id}`,
-    {
-      name: newName,
-      image: newImage,
-      price: newPrice,
-      rarity: newRarity,
-      condition: newCondition,
-      descirption: newDesc,
 
-    }).then((response)=>{
+      }
+      console.log(postData);
+    axios.put(`https://re-play-back.herokuapp.com/api/listings/${listingData.id}`, postData
+  ).then((response)=>{
       axios
-        .get('http://re-play-back.herokuapp.com/api/listings').then((response)=>{
+        .get(`https://re-play-back.herokuapp.com/api/listings`).then((response)=>{
           setListings(response.data)
           setNewName('')
           setNewImage('')
@@ -37,7 +40,7 @@ const EditListing = () => {
 
   const handleDelete = (listingData) => {
     axios
-      .delete(`http://re-play-back.herokuapp.com/api/listings/${listingData._id}`)
+      .delete(`http://re-play-back.herokuapp.com/api/listings/${listingData.id}`)
       .then(()=> {
         axios
           .get('http://re-play-back.herokuapp.com/api/listings').then((response)=> {

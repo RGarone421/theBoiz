@@ -9,6 +9,14 @@ import axios from 'axios'
 const Home = () => {
 
   const [listings, setListings]=useState([])
+  const [showEdit, setShowEdit]=useState(false)
+
+  const editViewOn = () => {
+    setShowEdit(true)
+  }
+  const editViewOff = () => {
+    setShowEdit(false)
+  }
   const handleDelete = (listingData) => {
     console.log(listingData);
     axios
@@ -38,7 +46,11 @@ const Home = () => {
         <p className="card-text text-info">Condition: {listing.condition}</p>
         <button className="btn btn-success d-flex justify-content-between">Buy it Now</button>
         <button className="btn btn-danger d-flex justify-content-between" onClick={ (event)=>{ handleDelete(listing.id)}}>Delete</button>
-
+        <button className="btn btn-success d-flex justify-content-between" onClick={editViewOn}>Edit</button>
+        {showEdit ? (<>
+          <EditListing />
+          <button onClick={editViewOff}>Close Edit</button>
+        </>):null}
       </div>
       </div>
     })}

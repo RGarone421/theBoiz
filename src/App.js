@@ -46,7 +46,6 @@ const App = () => {
   return(
     <>
     <main className='column'>
-      <h1>Auth0 Login</h1>
       <LoginButton />
       <LogoutButton />
     </main>
