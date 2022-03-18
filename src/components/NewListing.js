@@ -70,9 +70,13 @@ const NewListing = () => {
     Name: <input type='text' onChange={handleNewNameChange} /><br />
     Image: <input type='text' onChange={handleNewImageChange} /><br />
     Description: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Rarity: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Condition: <input type='text' onChange={handleNewConditionChange} /><br />
-    <input type='submit' value='submit'/>
+    Rarity (1-10): <input type='text' onChange={handleNewDescriptionChange} /><br />
+    Condition: <br />
+    <input type='radio' value="Poor" name='condition' /> Poor<br />
+    <input type='radio' value="Fair" name='condition' /> Fair<br />
+    <input type='radio' value="Good" name='condition' /> Good<br />
+    <input type='radio' value="New" name='condition' /> New<br />
+    <input type='submit' value='submit'/><br />
     </form>
     </div>
   )
