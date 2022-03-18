@@ -70,7 +70,7 @@ const NewListing = () => {
     {newName}-{newDesc}-{newPrice}-{newRarity}-{newCondition}
     <form className='form' onSubmit={handleNewListingSubmit}>
 
-    Username: <input type='text'/><br />
+    
     Name: <input type='text' onChange={handleNewNameChange} /><br />
     Image: <input type='text' onChange={handleNewImageChange} /><br />
     Description: <input type='text' onChange={handleNewDescriptionChange} /><br />
