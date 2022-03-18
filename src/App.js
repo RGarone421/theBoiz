@@ -16,11 +16,13 @@ const App = () => {
   const [startCheck, setStartCheck] = useState(false)
   const [addCheck, setAddCheck]= useState(false)
   const [profileCheck, setProfileCheck] = useState(false)
+  const [openCheck, setOpenCheck] = useState(true)
 
   const openProfile = () => {
     setHomeCheck(false)
     setListingCheck(false)
     setProfileCheck(true)
+    setOpenCheck(false)
   }
   const changeAddCheck = () => {
     setAddCheck(true)
@@ -39,6 +41,7 @@ const App = () => {
     setCreateCheck(false)
     setHomeCheck(true)
     setProfileCheck(false)
+    setOpenCheck(false)
   }
   const goLogin = () => {
     setLoginCheck(true)
@@ -80,7 +83,8 @@ const App = () => {
           <Home />
 
           </div>
-        ):<>
+        ): null}
+        {openCheck ? (
         <div className='container'>
         <h1>Replay!</h1>
         <h7>"Where video games always have extra lives"</h7>
@@ -91,7 +95,7 @@ const App = () => {
             </ul>
             </div>
           </div>
-          </>}
+        ):null}
     </>
   )
 }
