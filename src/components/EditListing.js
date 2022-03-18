@@ -65,13 +65,14 @@ const EditListing = () => {
   }
   return(
     <div>
+    {newName}-{newDesc}-{newPrice}-{newRarity}-{newCondition}
     <form className='form' onSubmit={handleNewListingEdit}>
-    Username: <input type='text'/><br />
-    Name: <input type='text' onChange={handleNewNameChange} /><br />
-    Image: <input type='text' onChange={handleNewImageChange} /><br />
-    Description: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Rarity: <input type='text' onChange={handleNewDescriptionChange} /><br />
-    Condition: <input type='text' onChange={handleNewConditionChange} /><br />
+    Name: <input type='text' name='name' onChange={handleNewNameChange} /><br />
+    Image: <input type='text' name='image'onChange={handleNewImageChange} /><br />
+    Description: <input type='text' name='description' onChange={handleNewDescriptionChange} /><br />
+    Price: <input type='number' name='price' onChange={handleNewPriceChange} /><br />
+    Rarity: <input type='text' name='rarity' onChange={handleNewRarityChange} /><br />
+    Condition: <input type='text' name='condition' onChange={handleNewConditionChange} /><br />
     <input type='submit' value='submit'/>
     </form>
     </div>
