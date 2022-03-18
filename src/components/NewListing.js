@@ -9,20 +9,24 @@ const NewListing = () => {
   const [newCondition, setNewCondition] = useState('')
   const [listings, setListings]=useState([])
 
-  const handleNewListingSubmit = (event) => {
-    event.preventDefault(
-    axios.post('localhost:3000',
-    {
-      name: newName,
-      image: newImage,
-      price: newPrice,
-      rarity: newRarity,
-      condition: newCondition,
-      descirption: newDesc,
 
-    }).then((response)=>{
+  const handleNewListingSubmit = (event) => {
+    event.preventDefault()
+    const postData =   {
+        name:newName,
+        image: newImage,
+        descirption: newDesc,
+        price: newPrice,
+        rarity: newRarity,
+        condition: newCondition,
+
+
+      }
+      console.log(postData);
+    axios.post('https://re-play-back.herokuapp.com/api/listings', postData
+  ).then((response)=>{
       axios
-        .get('localhost:3000').then((response)=>{
+        .get('https://re-play-back.herokuapp.com/api/listings').then((response)=>{
           setListings(response.data)
           setNewName('')
           setNewImage('')
@@ -32,15 +36,15 @@ const NewListing = () => {
           setNewDesc('')
         })
     })
-    )
+
   }
 
   const handleDelete = (listingData) => {
     axios
-      .delete(`localhost:3000/${listingData._id}`)
+      .delete(`https://re-play-back.herokuapp.com/api/listings/${listingData.id}`)
       .then(()=> {
         axios
-          .get('localhost:3000/listings').then((response)=> {
+          .get('https://re-play-back.herokuapp.com/api/listings').then((response)=> {
             setListings(response.data)
           })
       })
@@ -65,7 +69,9 @@ const NewListing = () => {
   }
   return(
     <div>
+    {newName}-{newDesc}-{newPrice}-{newRarity}-{newCondition}
     <form className='form' onSubmit={handleNewListingSubmit}>
+
     Username: <input type='text'/><br />
     Name: <input type='text' onChange={handleNewNameChange} /><br />
     Image: <input type='text' onChange={handleNewImageChange} /><br />
@@ -77,6 +83,7 @@ const NewListing = () => {
     <input type='radio' value="Good" name='condition' /> Good<br />
     <input type='radio' value="New" name='condition' /> New<br />
     <input type='submit' value='submit'/><br />
+
     </form>
     </div>
   )
