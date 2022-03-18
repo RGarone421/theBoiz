@@ -3,3 +3,4 @@
 .env.development.local
 .env.production.local
 .env
+node_moduoles
