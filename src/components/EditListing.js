@@ -14,7 +14,7 @@ const EditListing = () => {
     const postData =   {
         name:newName,
         image: newImage,
-        descirption: newDesc,
+        description: newDesc,
         price: newPrice,
         rarity: newRarity,
         condition: newCondition,

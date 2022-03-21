@@ -70,7 +70,6 @@ const App = () => {
       <button onClick ={goToHome}>Listings</button>
       <button onClick={openProfile}>My Profile</button>
       {profileCheck ? (<Profile />):null}
-      <button onClick={changeAddCheck}>Add a New Listing</button>
       <button className='btn btn-info btn-sm col-xs-2 margin-left' onClick={changeAddCheck}>Create New Listing</button>
       {addCheck ? (
         <div>

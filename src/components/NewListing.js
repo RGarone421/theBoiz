@@ -15,7 +15,7 @@ const NewListing = () => {
     const postData =   {
         name:newName,
         image: newImage,
-        descirption: newDesc,
+        description: newDesc,
         price: newPrice,
         rarity: newRarity,
         condition: newCondition,
@@ -71,7 +71,7 @@ const NewListing = () => {
     <form className='form' onSubmit={handleNewListingSubmit}>
     Name: <input placeholder='Mr. Game and Watch' type='text' onChange={handleNewNameChange} /><br />
     Image: <input placeholder='Must be img url' type='text' onChange={handleNewImageChange} /><br />
-    Description: <input placeholder='Any Flaws?' type='text' onChange={handleNewDescriptionChange} /><br />
+    Description: <input placeholder='Any Flaws?' type='text' name='description' onChange={handleNewDescriptionChange} /><br />
     Price: <input placeholder='$ USD' type='number' name='price' onChange={handleNewPriceChange} /><br />
     Rarity (1-10): <input placeholder='10 = Unicorn' type='number' onChange={handleNewRarityChange} /><br />
     Condition:
