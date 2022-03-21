@@ -27,14 +27,14 @@ const Home = () => {
     const postData =   {
         name:newName,
         image: newImage,
-        descirption: newDesc,
+        description: newDesc,
         price: newPrice,
         rarity: newRarity,
         condition: newCondition,
 
 
       }
-    axios.put(`https://re-play-back.herokuapp.com/api/listings/${listingData.id}`, postData
+    axios.put(`https://re-play-back.herokuapp.com/api/listings/${listingData}`, postData
   ).then((response)=>{
       axios
         .get(`https://re-play-back.herokuapp.com/api/listings`).then((response)=>{
@@ -81,8 +81,8 @@ const Home = () => {
   useEffect(()=>{
     axios.get('http://re-play-back.herokuapp.com/api/listings').then((response)=>{
       setListings(response.data)
-    },[])
-  })
+    })
+  },[])
     return (
       <div className='flex-container'>
 
@@ -97,20 +97,20 @@ const Home = () => {
         <button className="btn btn-success justify-content-between btn-sm btn-block">Buy it Now</button><br />
         <button className="btn btn-danger justify-content-between btn-sm btn-block" onClick={ (event)=>{ handleDelete(listing.id)}}>Delete</button><br />
         <button className="btn btn-warning justify-content-between btn-sm btn-block" onClick={editViewOn}>Edit Listing</button><br />
-        {showEdit ? (<>
-          <div>
-          <form className='form' onSubmit={handleNewListingEdit(listing.id)}>
-          Name: <input type='text' name='name' onChange={handleNewNameChange} /><br />
-          Image: <input type='text' name='image'onChange={handleNewImageChange} /><br />
-          Description: <input type='text' name='description' onChange={handleNewDescriptionChange} /><br />
-          Price: <input type='number' name='price' onChange={handleNewPriceChange} /><br />
-          Rarity: <input type='text' name='rarity' onChange={handleNewRarityChange} /><br />
-          Condition: <input type='text' name='condition' onChange={handleNewConditionChange} /><br />
+        {showEdit ? (
+          <form className='form' onSubmit={ (event) => { handleNewListingEdit(listing.id)}}>
+          Name: <input type='text' name='name' placeholder={listing.name} onChange={handleNewNameChange} /><br />
+          Image: <input type='text' name='image' placeholder={listing.image}onChange={handleNewImageChange} /><br />
+          Description: <input type='text' placeholder={listing.description}name='description' onChange={handleNewDescriptionChange} /><br />
+          Price: <input type='number' placeholder={listing.price}name='price' onChange={handleNewPriceChange} /><br />
+          Rarity: <input type='text' placeholder={listing.rarity} name='rarity' onChange={handleNewRarityChange} /><br />
+          Condition: <input type='text' placeholder={listing.condition} name='condition' onChange={handleNewConditionChange} /><br />
+          <button onClick={editViewOff}>Close Edit</button>
           <input type='submit' value='submit'/>
           </form>
-          </div>
-          <button onClick={editViewOff}>Close Edit</button>
-        </>):null}
+
+
+        ):null}
       </div>
       </div>
     })}
