@@ -79,7 +79,7 @@ const Home = () => {
       })
   }
   useEffect(()=>{
-    axios.get('http://re-play-back.herokuapp.com/api/listings').then((response)=>{
+    axios.get('https://re-play-back.herokuapp.com/api/listings').then((response)=>{
       setListings(response.data)
     })
   },[])
